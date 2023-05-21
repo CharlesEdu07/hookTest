@@ -4,9 +4,9 @@ import 'dart:convert';
 
 class DataService {
   final ValueNotifier<List> tableStateNotifier = ValueNotifier([]);
-  final String buildQuantity;
+  int buildQuantity;
 
-  DataService({this.buildQuantity = '5'});
+  DataService({this.buildQuantity = 5});
 
   void loadFunctions(int index) {
     List<Function> functions = [
@@ -27,7 +27,7 @@ class DataService {
       scheme: 'https',
       host: 'random-data-api.com',
       path: 'api/beer/random_beer',
-      queryParameters: {'size': buildQuantity},
+      queryParameters: {'size': buildQuantity.toString()},
     );
 
     var jsonString = await http.read(beersUri);
@@ -51,7 +51,7 @@ class DataService {
       scheme: 'https',
       host: 'random-data-api.com',
       path: 'api/nation/random_nation',
-      queryParameters: {'size': buildQuantity},
+      queryParameters: {'size': buildQuantity.toString()},
     );
 
     var jsonString = await http.read(nationsUri);
@@ -75,7 +75,7 @@ class DataService {
       scheme: 'https',
       host: 'random-data-api.com',
       path: 'api/coffee/random_coffee',
-      queryParameters: {'size': buildQuantity},
+      queryParameters: {'size': buildQuantity.toString()},
     );
 
     var jsonString = await http.read(coffeesUri);
