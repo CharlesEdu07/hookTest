@@ -17,6 +17,8 @@ class MyApp extends StatelessWidget {
     {"label": "Nações", "icon": Icons.flag},
   ];
 
+  MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

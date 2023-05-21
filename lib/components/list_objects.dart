@@ -5,7 +5,7 @@ class ListObjects extends StatelessWidget {
   final List? propertyNames;
   final List? columnNames;
 
-  ListObjects({
+  const ListObjects({super.key, 
     required this.objects,
     required this.propertyNames,
     this.columnNames,
@@ -13,7 +13,7 @@ class ListObjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("Build da classe: " + this.toStringShort());
+    print("Build da classe: ${toStringShort()}");
 
     List<DataColumn> columns = [];
     List<DataRow> rows = [];
